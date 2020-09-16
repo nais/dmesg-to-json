@@ -1,6 +1,6 @@
 [package]
 name = "dmesg-to-json"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Christian C. <christian.chavez@nav.no>"]
 edition = "2018"
 description = """
@@ -15,3 +15,5 @@ structopt = "0.3.17"
 num-derive = "0.3.2"
 num-traits = "0.2.12"
 regex = "1.3.9"
+anyhow = "1.0.32"
+thiserror = "1.0.20"
