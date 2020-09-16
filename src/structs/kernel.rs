@@ -2,7 +2,7 @@ use std::error::Error;
 use std::fmt;
 
 use num_derive::{FromPrimitive, ToPrimitive};
-use regex::Regex;
+use regex::RegexBuilder;
 
 #[derive(Debug, FromPrimitive, ToPrimitive)]
 pub enum KernelLogLevel {
@@ -42,27 +42,25 @@ impl KernelLine {
     pub fn new(line: &str) -> Result<KernelLine, Box<dyn Error>> {
         // regex parse log_level, timestamp, and message from line
         // TODO: Replace with some lazy_static solution to avoid re-compiling regex each time
-        let regex = Regex::new(r"^<(?P<level>\d)>\[\s+(?P<timestamp>\d+\.\d+)\] (?P<message>.*)$")?;
-        let mut captures: Vec<&str> = vec![];
-        if let Some(capture_groups) = regex.captures(line) {
-            captures = capture_groups
-                .iter()
-                .skip(1) // First element is always whole string matched, not specific groups
-                .filter(|s| s.is_some())
-                .map(|s| s.unwrap().as_str())
-                .collect();
-        }
-        if captures.len() != 3 {
-            panic!(
-                "Syslog/kernel log line does not match expected regex!{}",
-                format!("\nExpected:\n\t{}\n\nReceived:\n\t{}", regex, line)
-            );
-        }
+        let regex = RegexBuilder::new(
+            r#"
+                ^                                   # Start of string _and_ line!
+                <(?P<level>\d)>                     # First match: The log level
+                \[\s+(?P<timestamp>\d+\.\d+)\]\s    # Second match: the time in seconds since boot
+                (?P<message>.*)                     #The actual log message
+            "#,
+        )
+        .ignore_whitespace(true) // This allows the multi-line regex pattern string
+        .build()?;
+        let captures = match regex.captures(&line) {
+            Some(regex_results) => regex_results,
+            None => panic!("Regex match returned no groups!"),
+        };
 
         let result = KernelLine {
-            timestamp: captures[1].to_string(),
-            message: captures[2].to_string(),
-            log_level: match captures[0] {
+            timestamp: captures["timestamp"].to_string(),
+            message: captures["message"].to_string(),
+            log_level: match &captures["level"] {
                 "0" => KernelLogLevel::Emergency,
                 "1" => KernelLogLevel::Alert,
                 "2" => KernelLogLevel::Critical,
