@@ -20,7 +20,7 @@ struct Cli {
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args = Cli::from_args();
-    if 2 >= args.verbosity_level {
+    if 2 <= args.verbosity_level {
         dbg!(&args);
     }
     kernel_log_timestamps_enable(true)?;
