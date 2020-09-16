@@ -1,10 +1,14 @@
 [package]
 name = "dmesg-to-json"
-version = "0.1.0"
-authors = ["Christian C. <x10an14@gmail.com>"]
+version = "0.2.0"
+authors = ["Christian C. <christian.chavez@nav.no>"]
 edition = "2018"
+description = """
+A simple rust application for following Linux kernel log lines, filtering them, and converting them to json.\
+"""
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 rmesg = "0.8.0"
+structopt = "0.3.17"
