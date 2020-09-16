@@ -12,3 +12,6 @@ A simple rust application for following Linux kernel log lines, filtering them, 
 [dependencies]
 rmesg = "0.8.0"
 structopt = "0.3.17"
+num-derive = "0.3.2"
+num-traits = "0.2.12"
+regex = "1.3.9"
