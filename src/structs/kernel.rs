@@ -63,13 +63,40 @@ fn get_regex_match_by_name(
     }
 }
 
-fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, String, String)> {
+/// Parse `input_string` into a humantime::Timestamp, by leveraging humatime::parse_rfc3339_weak()
+/// -> https://docs.rs/humantime/2.0.1/humantime/fn.parse_rfc3339_weak.html
+fn parse_dmesg_iso_timestamp(input_string: &str) -> Result<humantime::Timestamp> {
+    let timestamp: std::time::SystemTime = match humantime::parse_rfc3339_weak(input_string) {
+        Ok(result) => result,
+        Err(e) => {
+            return Err(anyhow!(
+                "Unexpected error occured when parsing timestamp!\n\t{}",
+                e
+            ))
+        }
+    };
+    Ok(humantime::Timestamp::from(timestamp))
+}
+
+/// Match input line from dmesg and parse its contents.
+/// Expected string structure:
+///     <log-level>?<yyyy-mm-ddTHH:MM:SS,<ms><timezone offset> <message>
+fn get_log_line_regex_matches(
+    input_line: &str,
+) -> Result<(KernelLogLevel, humantime::Timestamp, String)> {
     let regex_pattern = r#"
-        ^                               # Start of string _and_ line!
-        <(?P<level>\d)>                 # First match: The log level
-        \[\s+(?P<timestamp>\d+\.\d+)\]  # Second match: the time in seconds since boot
-        \s                              # The literal "<space>" separating timestampt and message
-        (?P<message>.*)                 # The actual log message
+        ^                       # Start of string _and_ line!
+        (<(?P<level>\d)>)?      # Potential first match: The log level
+        (?P<timestamp>
+            \d{4}-\d{2}-\d{2}   # Timestamp: yyyy-mm-dd
+            T                   # Timestamp: seperator
+            \d{2}:\d{2}:\d{2}   # Timestamp: hours:minutes:seconds
+        )
+        ,                       # Timestamp: seperator
+        \d+                     # Timestamp: milliseconds
+        [+-]\d{4}               # Timestamp: timezone
+        \s                      # A literal "<space>" separating timestampt and message
+        (?P<message>.*)         # The actual log message
     "#;
 
     // Match regex pattern with something
@@ -92,7 +119,10 @@ fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, Strin
 
     // Extract named groups into variables
     let (level, timestamp, message) = (
-        get_regex_match_by_name(&captures, &input_line, &regex_pattern, "level")?,
+        match get_regex_match_by_name(&captures, &input_line, &regex_pattern, "level") {
+            Ok(lvl) => lvl,
+            Err(_) => "6".to_string(),
+        },
         get_regex_match_by_name(&captures, &input_line, &regex_pattern, "timestamp")?,
         get_regex_match_by_name(&captures, &input_line, &regex_pattern, "message")?,
     );
@@ -111,13 +141,14 @@ fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, Strin
             }))
         }
     };
-    Ok((log_level, timestamp, message))
+    let timing = parse_dmesg_iso_timestamp(&timestamp)?;
+    Ok((log_level, timing, message))
 }
 
 #[derive(Debug)]
 pub struct KernelLine {
     pub log_level: KernelLogLevel,
-    pub timestamp: String,
+    pub timestamp: humantime::Timestamp,
     pub message: String,
 }
 
