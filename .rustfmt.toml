@@ -1,0 +1,14 @@
+fn_args_layout = "Vertical"
+newline_style = "Unix"
+hard_tabs = true
+tab_spaces = 4
+use_field_init_shorthand = false
+use_try_shorthand = true
+remove_nested_parens = true
+match_block_trailing_comma = true
+trailing_comma = "Always"
+
+# Not yet stable
+indent_style = "Block"
+wrap_comments = true
+control_brace_style = "AlwaysSameLine"
