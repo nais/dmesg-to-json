@@ -4,6 +4,7 @@ use std::io::{self, BufRead};
 
 // Local imports
 mod structs;
+mod utils;
 
 // Third-party imports
 use structopt::{
