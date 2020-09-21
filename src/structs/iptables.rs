@@ -47,7 +47,7 @@ impl IptablesLogLine {
 			format_rfc3339(*timestamp).to_string(),
 		);
 		let result: IptablesLogLine = self::IptablesLogLine {
-			timestamp: Serde::from(timestamp.to_owned()),
+			time_stamp: Serde::from(timestamp.to_owned()),
 			log_type: iptables_prefix.to_owned(),
 			source_ip: parse_map["SRC"].parse()?,
 			destination_ip: parse_map["DST"].parse()?,
