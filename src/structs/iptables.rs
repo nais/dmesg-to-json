@@ -11,8 +11,9 @@ use itertools::Itertools;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize)]
+#[serde(rename_all = "kebab-case")]
 pub struct IptablesLogLine {
-	pub timestamp: Serde<SystemTime>,
+	pub time_stamp: Serde<SystemTime>,
 	pub source_ip: Ipv4Addr,
 	pub destination_ip: Ipv4Addr,
 	pub log_type: String,
