@@ -2,10 +2,6 @@
 use std::error::Error;
 use std::io::{self, BufRead};
 
-// Local imports
-mod structs;
-mod utils;
-
 // Third-party imports
 #[macro_use]
 extern crate lazy_static;
@@ -13,6 +9,10 @@ use structopt::{
 	clap::AppSettings::{ColorAuto, ColoredHelp},
 	StructOpt,
 };
+
+// Local imports
+mod structs;
+mod utils;
 
 #[derive(Debug, StructOpt)]
 #[structopt(setting(ColorAuto), setting(ColoredHelp), about)]
