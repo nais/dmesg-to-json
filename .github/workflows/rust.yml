@@ -10,11 +10,77 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: >
-        cargo build
-        --release
-        --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      - uses: actions/checkout@v2
+      - name: Cache cargo registry
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/registry/
+          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+      - name: Cache cargo index
+        uses: actions/cache@v2
+        with:
+          path: ~/.cargo/git/
+          key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+      - name: Cache cargo build
+        uses: actions/cache@v2
+        with:
+          path: target/
+          key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - name: Build
+        run: >
+          cargo build
+          --release
+          --verbose
+      - name: Run tests
+        run: cargo test --verbose
+      - name: Save binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: dmesg-to-json
+          path: target/release/dmesg-to-json
+
+  set-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.set-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: set version
+        id: set-version
+        run: echo ::set-output name=version::$(date "+%Y-%m-%d")-$(git --no-pager log -1 --pretty=%h)
+
+  release:
+    if: ${{ github.ref == 'refs/tags/*' }}
+    needs:
+      - build
+      - set-version
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.set-version.outputs.version }}
+          release_name: Release ${{ steps.set-version.outputs.version }}
+          draft: false
+          prerelease: false
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: dmesg-to-json
+          path: target/release/dmesg-to-json
+      - name: Upload dmesg-to-json binary
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./target/release/dmesg-to-json
+          asset_name: dmesg-to-json
+          asset_content_type: application/octet-stream
