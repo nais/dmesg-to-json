@@ -5,7 +5,6 @@ use std::time::SystemTime;
 
 // Third-party imports
 use anyhow::{anyhow, Result};
-use humantime::format_rfc3339;
 use humantime_serde::Serde;
 use itertools::Itertools;
 use serde::{Deserialize, Serialize};
@@ -33,19 +32,12 @@ impl IptablesLogLine {
 				))
 			}
 		};
-		let mut parse_map: HashMap<String, String> = body
+		let parse_map: HashMap<String, String> = body
 			.split(" ")
 			.flat_map(|pair| pair.split("="))
 			.map(|s| s.to_string())
 			.tuples()
 			.collect();
-		// Necessary to duplicate map because rust as a programming language are still waiting IndexMut
-		// trait, ref:
-		parse_map.insert("log-type".to_string(), iptables_prefix.to_string());
-		parse_map.insert(
-			"timestamp".to_string(),
-			format_rfc3339(*timestamp).to_string(),
-		);
 		let result: IptablesLogLine = self::IptablesLogLine {
 			time_stamp: Serde::from(timestamp.to_owned()),
 			log_type: iptables_prefix.to_owned(),
