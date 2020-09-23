@@ -65,7 +65,7 @@ fn skip_irrelevant_lines() -> Result<(), Box<dyn Error>> {
 
 	cli.write_stdin(inputs)
 		.assert()
-		.failure()
+		.success()
 		.stdout(predicate::str::is_empty());
 	Ok(())
 }
