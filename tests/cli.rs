@@ -3,7 +3,8 @@ use std::error::Error;
 
 // Non-std lib imports
 use assert_cmd::cmd::Command;
-use predicates::prelude::*;
+use indoc::indoc;
+use predicates::prelude::predicate;
 
 #[test]
 fn long_help_works() -> Result<(), Box<dyn Error>> {
@@ -18,7 +19,7 @@ fn long_help_works() -> Result<(), Box<dyn Error>> {
 #[test]
 fn skip_irrelevant_lines() -> Result<(), Box<dyn Error>> {
 	let mut cli = Command::cargo_bin(env!("CARGO_PKG_NAME"))?;
-	let inputs = "
+	let inputs = indoc! {"
 		2020-07-30T14:02:51,000000+00:00 Command line: BOOT_IMAGE=/boot/vmlinuz-5.3.0-1032-gcp root=LABEL=cloudimg-rootfs ro console=ttyS0
 		2020-07-30T14:02:51,000000+00:00 KERNEL supported cpus:
 		2020-07-30T14:02:51,000000+00:00   Intel GenuineIntel
@@ -60,7 +61,7 @@ fn skip_irrelevant_lines() -> Result<(), Box<dyn Error>> {
 		2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003f3ff000-0x000000003ffdffff] usable
 		2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003ffe0000-0x000000003fffffff] reserved
 		2020-07-30T14:02:51,000000+00:00 NX (Execute Disable) protection: active
-	";
+	"};
 
 	cli.write_stdin(inputs)
 		.assert()
