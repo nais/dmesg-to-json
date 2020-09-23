@@ -2,6 +2,7 @@ name: Pipeline
 
 on:
   - push
+  - create
 
 env:
   CARGO_TERM_COLOR: always
@@ -54,7 +55,7 @@ jobs:
         run: echo ::set-output name=version::$(date "+%Y-%m-%d")-$(git --no-pager log -1 --pretty=%h)
 
   release:
-    if: ${{ github.ref == 'refs/tags/*' }}
+    if: contains(github.ref, 'refs/tags/v')
     needs:
       - build
       - set-version
