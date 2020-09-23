@@ -1,6 +1,6 @@
 [package]
 name = "dmesg-to-json"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["Christian C. <christian.chavez@nav.no>"]
 edition = "2018"
 description = """
