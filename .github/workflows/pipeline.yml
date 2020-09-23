@@ -32,6 +32,7 @@ jobs:
           override: true
       - name: Run tests
         run: cargo test --verbose
+
   build:
     runs-on: ubuntu-20.04
     steps:
@@ -55,6 +56,22 @@ jobs:
         with:
           toolchain: stable
           override: true
+          components:
+            - rustfmt
+            - clippy
+      - name: Linting
+        run: >
+          cargo fmt
+          --message-format human
+          --verbose
+          --
+          --check
+          --color always
+          --edition 2018
+          --files-with-diff
+          --print-config current .rustfmt.toml
+          &&
+          cargo clippy
       - name: Build
         run: >
           cargo build
