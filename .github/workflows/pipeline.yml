@@ -111,8 +111,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.set-version.outputs.version }}
-          release_name: Release ${{ steps.set-version.outputs.version }}
+          tag_name: ${{ needs.set-version.outputs.version }}
+          release_name: Release ${{ needs.set-version.outputs.version }}
           draft: false
           prerelease: false
       - name: Download artifact
