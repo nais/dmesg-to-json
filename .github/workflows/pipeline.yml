@@ -75,8 +75,15 @@ jobs:
       - name: Build
         run: >
           cargo build
+          --frozen
           --release
           --verbose
+      - name: Run `cargo check`
+        run: >
+          cargo check
+          --frozen
+          --bin dmesg-to-json
+          --all-features
       - name: Save binary
         uses: actions/upload-artifact@v2
         with:
