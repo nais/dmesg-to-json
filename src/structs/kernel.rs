@@ -64,7 +64,7 @@ impl KernelLine {
 
 		let result = KernelLine {
 			timestamp: timestamp,
-			message: message,
+			message: message.to_owned(),
 			log_level: log_level,
 		};
 		Ok(result)

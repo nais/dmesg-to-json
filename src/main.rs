@@ -2,15 +2,17 @@
 use std::error::Error;
 use std::io::{self, BufRead};
 
-// Local imports
-mod structs;
-mod utils;
-
 // Third-party imports
+#[macro_use]
+extern crate lazy_static;
 use structopt::{
 	clap::AppSettings::{ColorAuto, ColoredHelp},
 	StructOpt,
 };
+
+// Local imports
+mod structs;
+mod utils;
 
 #[derive(Debug, StructOpt)]
 #[structopt(setting(ColorAuto), setting(ColoredHelp), about)]
@@ -21,7 +23,7 @@ struct Cli {
 
 	/// String to filter log line prefix with
 	#[structopt(short, long)]
-	include_filter: Option<String>,
+	print_all: bool,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -37,12 +39,18 @@ fn main() -> Result<(), Box<dyn Error>> {
 			eprintln!("Received line: {}", &line);
 		}
 		let kernel_line = structs::KernelLine::new(&mut line)?;
-		if let Some(prefix_filter) = &args.include_filter {
-			if !kernel_line.message.starts_with(prefix_filter) {
-				continue;
-			}
+		if args.print_all {
+			println!("{}", &kernel_line.message);
+			continue;
 		}
-		println!("{}", &kernel_line.message);
+		if !args.print_all && !kernel_line.message.starts_with("naisdevice-fwd: ") {
+			continue;
+		}
+
+		// Now we should only print dmesg lines starting with specified prefix as json
+		let jsonified_logline =
+			structs::IptablesLogLine::new(&kernel_line.message, &kernel_line.timestamp)?;
+		println!("{}", serde_json::to_string(&jsonified_logline)?);
 	}
 	Ok(())
 }
