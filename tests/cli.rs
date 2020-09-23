@@ -1,9 +1,8 @@
 // std-lib imports
 use std::error::Error;
-use std::process::Command;
 
 // Non-std lib imports
-use assert_cmd::prelude::*;
+use assert_cmd::cmd::Command;
 use predicates::prelude::*;
 
 #[test]
@@ -63,10 +62,9 @@ fn skip_irrelevant_lines() -> Result<(), Box<dyn Error>> {
 		2020-07-30T14:02:51,000000+00:00 NX (Execute Disable) protection: active
 	";
 
-	cli.arg("")
-		.write_stdin(inputs)
+	cli.write_stdin(inputs)
 		.assert()
-		.success()
+		.failure()
 		.stdout(predicate::str::is_empty());
 	Ok(())
 }
