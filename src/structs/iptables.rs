@@ -12,7 +12,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Debug, Deserialize, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub struct IptablesLogLine {
-	pub time_stamp: Serde<SystemTime>,
+	pub timestamp: Serde<SystemTime>,
 	pub source_ip: Ipv4Addr,
 	pub destination_ip: Ipv4Addr,
 	pub log_type: String,
@@ -39,7 +39,7 @@ impl IptablesLogLine {
 			.tuples()
 			.collect();
 		let result: IptablesLogLine = self::IptablesLogLine {
-			time_stamp: Serde::from(timestamp.to_owned()),
+			timestamp: Serde::from(timestamp.to_owned()),
 			log_type: iptables_prefix.to_owned(),
 			source_ip: parse_map["SRC"].parse()?,
 			destination_ip: parse_map["DST"].parse()?,
