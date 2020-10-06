@@ -1,7 +1,10 @@
 [package]
 name = "dmesg-to-json"
 version = "0.1.0"
-authors = ["Christian C. <christian.chavez@nav.no>"]
+authors = [
+    "Christian C. <christian.chavez@nav.no>",
+    "Christer Edvartsen <christer.edvartsen@nav.no>",
+]
 edition = "2018"
 description = """
 A simple rust application for following Linux kernel log lines, filtering them, and converting them to json.\
@@ -22,3 +25,8 @@ itertools = "0.9.0"
 serde_json = "1.0.57"
 serde = { version = "1.0", features = ["derive"] }
 humantime-serde = "1.0.1"
+
+[dev-dependencies]
+predicates = "1.0.5"
+assert_cmd = "1.0.1"
+indoc = "1.0.2"
