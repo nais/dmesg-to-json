@@ -1,0 +1,494 @@
+2020-07-30T14:02:51,000000+00:00 Command line: BOOT_IMAGE=/boot/vmlinuz-5.3.0-1032-gcp root=LABEL=cloudimg-rootfs ro console=ttyS0
+2020-07-30T14:02:51,000000+00:00 KERNEL supported cpus:
+2020-07-30T14:02:51,000000+00:00   Intel GenuineIntel
+2020-07-30T14:02:51,000000+00:00   AMD AuthenticAMD
+2020-07-30T14:02:51,000000+00:00   Hygon HygonGenuine
+2020-07-30T14:02:51,000000+00:00   Centaur CentaurHauls
+2020-07-30T14:02:51,000000+00:00   zhaoxin   Shanghai
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x008: 'MPX bounds registers'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x010: 'MPX CSR'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x020: 'AVX-512 opmask'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x040: 'AVX-512 Hi256'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Supporting XSAVE feature 0x080: 'AVX-512 ZMM_Hi256'
+2020-07-30T14:02:51,000000+00:00 x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+2020-07-30T14:02:51,000000+00:00 x86/fpu: xstate_offset[3]:  832, xstate_sizes[3]:   64
+2020-07-30T14:02:51,000000+00:00 x86/fpu: xstate_offset[4]:  896, xstate_sizes[4]:   64
+2020-07-30T14:02:51,000000+00:00 x86/fpu: xstate_offset[5]:  960, xstate_sizes[5]:   64
+2020-07-30T14:02:51,000000+00:00 x86/fpu: xstate_offset[6]: 1024, xstate_sizes[6]:  512
+2020-07-30T14:02:51,000000+00:00 x86/fpu: xstate_offset[7]: 1536, xstate_sizes[7]: 1024
+2020-07-30T14:02:51,000000+00:00 x86/fpu: Enabled xstate features 0xff, context size is 2560 bytes, using 'compacted' format.
+2020-07-30T14:02:51,000000+00:00 BIOS-provided physical RAM map:
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x0000000000000000-0x0000000000000fff] reserved
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x0000000000001000-0x0000000000054fff] usable
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x0000000000055000-0x000000000005ffff] reserved
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x0000000000060000-0x0000000000097fff] usable
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x0000000000098000-0x000000000009ffff] reserved
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x0000000000100000-0x000000003e11dfff] usable
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003e11e000-0x000000003e120fff] ACPI data
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003e121000-0x000000003e121fff] ACPI NVS
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003e122000-0x000000003e2d1fff] usable
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003e2d2000-0x000000003e2d9fff] ACPI NVS
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003e2da000-0x000000003e31afff] reserved
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003e31b000-0x000000003f39afff] usable
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003f39b000-0x000000003f3f2fff] reserved
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003f3f3000-0x000000003f3fafff] ACPI data
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003f3fb000-0x000000003f3fefff] ACPI NVS
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003f3ff000-0x000000003ffdffff] usable
+2020-07-30T14:02:51,000000+00:00 BIOS-e820: [mem 0x000000003ffe0000-0x000000003fffffff] reserved
+2020-07-30T14:02:51,000000+00:00 NX (Execute Disable) protection: active
+2020-07-30T14:02:51,000000+00:00 efi: EFI v2.70 by EDK II
+2020-07-30T14:02:51,000000+00:00 efi:  TPMFinalLog=0x3e2d2000  ACPI=0x3f3fa000  ACPI 2.0=0x3f3fa014  SMBIOS=0x3f3cd000  MEMATTR=0x3e6b8218  TPMEventLog=0x3d93d018
+2020-07-30T14:02:51,000000+00:00 secureboot: Secure boot disabled
+2020-07-30T14:02:51,000000+00:00 SMBIOS 2.4 present.
+2020-07-30T14:02:51,000000+00:00 DMI: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
+2020-07-30T14:02:51,000000+00:00 Hypervisor detected: KVM
+2020-07-30T14:02:51,000000+00:00 kvm-clock: Using msrs 4b564d01 and 4b564d00
+2020-07-30T14:02:51,000000+00:00 kvm-clock: cpu 0, msr 25a01001, primary cpu clock
+2020-07-30T14:02:51,000000+00:00 kvm-clock: using sched offset of 18308459502 cycles
+2020-07-30T14:02:51,000003+00:00 clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+2020-07-30T14:02:51,000005+00:00 tsc: Detected 2000.000 MHz processor
+2020-07-30T14:02:51,000101+00:00 last_pfn = 0x3ffe0 max_arch_pfn = 0x400000000
+2020-07-30T14:02:51,000155+00:00 x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT
+2020-07-30T14:02:51,014134+00:00 check: Scanning 1 areas for low memory corruption
+2020-07-30T14:02:51,014180+00:00 Using GB pages for direct mapping
+2020-07-30T14:02:51,014373+00:00 RAMDISK: [mem 0x276d5000-0x29957fff]
+2020-07-30T14:02:51,014387+00:00 ACPI: Early table checksum verification disabled
+2020-07-30T14:02:51,014393+00:00 ACPI: RSDP 0x000000003F3FA014 000024 (v02 Google)
+2020-07-30T14:02:51,014397+00:00 ACPI: XSDT 0x000000003F3F90E8 00005C (v01 Google GOOGFACP 00000001      01000013)
+2020-07-30T14:02:51,014403+00:00 ACPI: FACP 0x000000003F3F4000 0000F4 (v02 Google GOOGFACP 00000001 GOOG 00000001)
+2020-07-30T14:02:51,014410+00:00 ACPI: DSDT 0x000000003F3F5000 0018BA (v01 Google GOOGDSDT 00000001 GOOG 00000001)
+2020-07-30T14:02:51,014414+00:00 ACPI: FACS 0x000000003E121000 000040
+2020-07-30T14:02:51,014417+00:00 ACPI: SSDT 0x000000003F3F8000 000316 (v02 GOOGLE Tpm2Tabl 00001000 INTL 20160527)
+2020-07-30T14:02:51,014421+00:00 ACPI: TPM2 0x000000003F3F7000 000034 (v04 GOOGLE          00000001 GOOG 00000001)
+2020-07-30T14:02:51,014425+00:00 ACPI: SRAT 0x000000003F3F3000 0000C8 (v03 Google GOOGSRAT 00000001 GOOG 00000001)
+2020-07-30T14:02:51,014428+00:00 ACPI: APIC 0x000000003E120000 000076 (v05 Google GOOGAPIC 00000001 GOOG 00000001)
+2020-07-30T14:02:51,014432+00:00 ACPI: SSDT 0x000000003E11F000 000980 (v01 Google GOOGSSDT 00000001 GOOG 00000001)
+2020-07-30T14:02:51,014435+00:00 ACPI: WAET 0x000000003E11E000 000028 (v01 Google GOOGWAET 00000001 GOOG 00000001)
+2020-07-30T14:02:51,014532+00:00 SRAT: PXM 0 -> APIC 0x00 -> Node 0
+2020-07-30T14:02:51,014533+00:00 SRAT: PXM 0 -> APIC 0x01 -> Node 0
+2020-07-30T14:02:51,014536+00:00 ACPI: SRAT: Node 0 PXM 0 [mem 0x00000000-0x0009ffff]
+2020-07-30T14:02:51,014537+00:00 ACPI: SRAT: Node 0 PXM 0 [mem 0x00100000-0x3fffffff]
+2020-07-30T14:02:51,014540+00:00 NUMA: Node 0 [mem 0x00000000-0x0009ffff] + [mem 0x00100000-0x3ffdffff] -> [mem 0x00000000-0x3ffdffff]
+2020-07-30T14:02:51,014550+00:00 NODE_DATA(0) allocated [mem 0x3fee8000-0x3ff12fff]
+2020-07-30T14:02:51,014800+00:00 Zone ranges:
+2020-07-30T14:02:51,014801+00:00   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+2020-07-30T14:02:51,014802+00:00   DMA32    [mem 0x0000000001000000-0x000000003ffdffff]
+2020-07-30T14:02:51,014804+00:00   Normal   empty
+2020-07-30T14:02:51,014805+00:00   Device   empty
+2020-07-30T14:02:51,014805+00:00 Movable zone start for each node
+2020-07-30T14:02:51,014808+00:00 Early memory node ranges
+2020-07-30T14:02:51,014809+00:00   node   0: [mem 0x0000000000001000-0x0000000000054fff]
+2020-07-30T14:02:51,014810+00:00   node   0: [mem 0x0000000000060000-0x0000000000097fff]
+2020-07-30T14:02:51,014811+00:00   node   0: [mem 0x0000000000100000-0x000000003e11dfff]
+2020-07-30T14:02:51,014812+00:00   node   0: [mem 0x000000003e122000-0x000000003e2d1fff]
+2020-07-30T14:02:51,014813+00:00   node   0: [mem 0x000000003e31b000-0x000000003f39afff]
+2020-07-30T14:02:51,014814+00:00   node   0: [mem 0x000000003f3ff000-0x000000003ffdffff]
+2020-07-30T14:02:51,015949+00:00 Zeroed struct page in unavailable ranges: 325 pages
+2020-07-30T14:02:51,015950+00:00 Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffdffff]
+2020-07-30T14:02:51,026804+00:00 ACPI: PM-Timer IO Port: 0xb008
+2020-07-30T14:02:51,026824+00:00 ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+2020-07-30T14:02:51,026904+00:00 IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+2020-07-30T14:02:51,026907+00:00 ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+2020-07-30T14:02:51,026909+00:00 ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+2020-07-30T14:02:51,026910+00:00 ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+2020-07-30T14:02:51,026911+00:00 ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+2020-07-30T14:02:51,026917+00:00 Using ACPI (MADT) for SMP configuration information
+2020-07-30T14:02:51,026921+00:00 smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+2020-07-30T14:02:51,026956+00:00 PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+2020-07-30T14:02:51,026958+00:00 PM: Registered nosave memory: [mem 0x00055000-0x0005ffff]
+2020-07-30T14:02:51,026960+00:00 PM: Registered nosave memory: [mem 0x00098000-0x0009ffff]
+2020-07-30T14:02:51,026960+00:00 PM: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+2020-07-30T14:02:51,026962+00:00 PM: Registered nosave memory: [mem 0x3e11e000-0x3e120fff]
+2020-07-30T14:02:51,026963+00:00 PM: Registered nosave memory: [mem 0x3e121000-0x3e121fff]
+2020-07-30T14:02:51,026964+00:00 PM: Registered nosave memory: [mem 0x3e2d2000-0x3e2d9fff]
+2020-07-30T14:02:51,026965+00:00 PM: Registered nosave memory: [mem 0x3e2da000-0x3e31afff]
+2020-07-30T14:02:51,026967+00:00 PM: Registered nosave memory: [mem 0x3f39b000-0x3f3f2fff]
+2020-07-30T14:02:51,026968+00:00 PM: Registered nosave memory: [mem 0x3f3f3000-0x3f3fafff]
+2020-07-30T14:02:51,026968+00:00 PM: Registered nosave memory: [mem 0x3f3fb000-0x3f3fefff]
+2020-07-30T14:02:51,026971+00:00 [mem 0x40000000-0xffffffff] available for PCI devices
+2020-07-30T14:02:51,026973+00:00 Booting paravirtualized kernel on KVM
+2020-07-30T14:02:51,026977+00:00 clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+2020-07-30T14:02:51,026985+00:00 setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+2020-07-30T14:02:51,027613+00:00 percpu: Embedded 54 pages/cpu s184320 r8192 d28672 u1048576
+2020-07-30T14:02:51,027647+00:00 kvm-stealtime: cpu 0, msr 3ec2c040
+2020-07-30T14:02:51,027654+00:00 PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+2020-07-30T14:02:51,027662+00:00 Built 1 zonelists, mobility grouping on.  Total pages: 254605
+2020-07-30T14:02:51,027663+00:00 Policy zone: DMA32
+2020-07-30T14:02:51,027987+00:00 Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+2020-07-30T14:02:51,028134+00:00 Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+2020-07-30T14:02:51,028194+00:00 mem auto-init: stack:off, heap alloc:off, heap free:off
+2020-07-30T14:02:51,030837+00:00 Memory: 924092K/1047276K available (14339K kernel code, 2380K rwdata, 4636K rodata, 2664K init, 5060K bss, 123184K reserved, 0K cma-reserved)
+2020-07-30T14:02:51,030961+00:00 SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+2020-07-30T14:02:51,030974+00:00 Kernel/User page tables isolation: enabled
+2020-07-30T14:02:51,030993+00:00 ftrace: allocating 43701 entries in 171 pages
+2020-07-30T14:02:51,050091+00:00 rcu: Hierarchical RCU implementation.
+2020-07-30T14:02:51,050095+00:00 rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+2020-07-30T14:02:51,050096+00:00 	Tasks RCU enabled.
+2020-07-30T14:02:51,050098+00:00 rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+2020-07-30T14:02:51,050098+00:00 rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+2020-07-30T14:02:51,053155+00:00 NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+2020-07-30T14:02:51,053410+00:00 Console: colour dummy device 80x25
+2020-07-30T14:02:51,219975+00:00 printk: console [ttyS0] enabled
+2020-07-30T14:02:51,221008+00:00 ACPI: Core revision 20190703
+2020-07-30T14:02:51,222036+00:00 APIC: Switch to symmetric I/O mode setup
+2020-07-30T14:02:51,223845+00:00 x2apic enabled
+2020-07-30T14:02:51,227028+00:00 Switched APIC routing to physical x2apic.
+2020-07-30T14:02:51,231030+00:00 ..TIMER: vector=0x30 apic1=0 pin1=0 apic2=-1 pin2=-1
+2020-07-30T14:02:51,232084+00:00 clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x39a85c9bff6, max_idle_ns: 881590591483 ns
+2020-07-30T14:02:51,234207+00:00 Calibrating delay loop (skipped) preset value.. 4000.00 BogoMIPS (lpj=8000000)
+2020-07-30T14:02:51,236146+00:00 pid_max: default: 32768 minimum: 301
+2020-07-30T14:02:51,238887+00:00 LSM: Security Framework initializing
+2020-07-30T14:02:51,239730+00:00 Yama: becoming mindful.
+2020-07-30T14:02:51,240551+00:00 AppArmor: AppArmor initialized
+2020-07-30T14:02:51,241411+00:00 Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+2020-07-30T14:02:51,242216+00:00 Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+2020-07-30T14:02:51,244738+00:00 Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+2020-07-30T14:02:51,246207+00:00 Last level dTLB entries: 4KB 64, 2MB 0, 4MB 0, 1GB 4
+2020-07-30T14:02:51,247528+00:00 Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+2020-07-30T14:02:51,250208+00:00 Spectre V2 : Mitigation: Full generic retpoline
+2020-07-30T14:02:51,251059+00:00 Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+2020-07-30T14:02:51,253339+00:00 Spectre V2 : Enabling Restricted Speculation for firmware calls
+2020-07-30T14:02:51,254212+00:00 Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+2020-07-30T14:02:51,256483+00:00 Spectre V2 : User space: Mitigation: STIBP via seccomp and prctl
+2020-07-30T14:02:51,258208+00:00 Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+2020-07-30T14:02:51,260489+00:00 TAA: Mitigation: Clear CPU buffers
+2020-07-30T14:02:51,262205+00:00 MDS: Mitigation: Clear CPU buffers
+2020-07-30T14:02:51,263765+00:00 Freeing SMP alternatives memory: 40K
+2020-07-30T14:02:51,376270+00:00 smpboot: CPU0: Intel(R) Xeon(R) CPU @ 2.00GHz (family: 0x6, model: 0x55, stepping: 0x3)
+2020-07-30T14:02:51,378201+00:00 Performance Events: unsupported p6 CPU model 85 no PMU driver, software events only.
+2020-07-30T14:02:51,378287+00:00 rcu: Hierarchical SRCU implementation.
+2020-07-30T14:02:51,380571+00:00 NMI watchdog: Perf NMI watchdog permanently disabled
+2020-07-30T14:02:51,382292+00:00 smp: Bringing up secondary CPUs ...
+2020-07-30T14:02:51,383368+00:00 x86: Booting SMP configuration:
+2020-07-30T14:02:51,384664+00:00 .... node  #0, CPUs:      #1
+2020-07-30T14:02:51,172872+00:00 kvm-clock: cpu 1, msr 25a01041, secondary cpu clock
+2020-07-30T14:02:51,386686+00:00 kvm-stealtime: cpu 1, msr 3ed2c040
+2020-07-30T14:02:51,394212+00:00 smp: Brought up 1 node, 2 CPUs
+2020-07-30T14:02:51,395406+00:00 smpboot: Max logical packages: 1
+2020-07-30T14:02:51,396436+00:00 smpboot: Total of 2 processors activated (8000.00 BogoMIPS)
+2020-07-30T14:02:51,398577+00:00 devtmpfs: initialized
+2020-07-30T14:02:51,399062+00:00 x86/mm: Memory block size: 128MB
+2020-07-30T14:02:51,400031+00:00 PM: Registering ACPI NVS region [mem 0x3e121000-0x3e121fff] (4096 bytes)
+2020-07-30T14:02:51,402216+00:00 PM: Registering ACPI NVS region [mem 0x3e2d2000-0x3e2d9fff] (32768 bytes)
+2020-07-30T14:02:51,403985+00:00 PM: Registering ACPI NVS region [mem 0x3f3fb000-0x3f3fefff] (16384 bytes)
+2020-07-30T14:02:51,406214+00:00 clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+2020-07-30T14:02:51,408106+00:00 futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+2020-07-30T14:02:51,409998+00:00 pinctrl core: initialized pinctrl subsystem
+2020-07-30T14:02:51,410404+00:00 PM: RTC time: 14:02:52, date: 2020-07-30
+2020-07-30T14:02:51,412222+00:00 NET: Registered protocol family 16
+2020-07-30T14:02:51,413425+00:00 audit: initializing netlink subsys (disabled)
+2020-07-30T14:02:51,414412+00:00 EISA bus registered
+2020-07-30T14:02:51,416707+00:00 cpuidle: using governor ladder
+2020-07-30T14:02:51,418217+00:00 cpuidle: using governor menu
+2020-07-30T14:02:51,419308+00:00 ACPI: bus type PCI registered
+2020-07-30T14:02:51,420185+00:00 acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+2020-07-30T14:02:51,421628+00:00 PCI: Using configuration type 1 for base access
+2020-07-30T14:02:51,423570+00:00 HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+2020-07-30T14:02:51,423646+00:00 HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+2020-07-30T14:02:51,430330+00:00 ACPI: Added _OSI(Module Device)
+2020-07-30T14:02:51,431315+00:00 ACPI: Added _OSI(Processor Device)
+2020-07-30T14:02:51,432477+00:00 ACPI: Added _OSI(3.0 _SCP Extensions)
+2020-07-30T14:02:51,434227+00:00 ACPI: Added _OSI(Processor Aggregator Device)
+2020-07-30T14:02:51,436065+00:00 ACPI: Added _OSI(Linux-Dell-Video)
+2020-07-30T14:02:51,436810+00:00 ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+2020-07-30T14:02:51,438268+00:00 ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+2020-07-30T14:02:51,442826+00:00 ACPI: 3 ACPI AML tables successfully acquired and loaded
+2020-07-30T14:02:51,446409+00:00 ACPI: Interpreter enabled
+2020-07-30T14:02:51,449596+00:00 ACPI: (supports S0 S3 S4 S5)
+2020-07-30T14:02:51,450215+00:00 ACPI: Using IOAPIC for interrupt routing
+2020-07-30T14:02:51,451389+00:00 PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+2020-07-30T14:02:51,454531+00:00 ACPI: Enabled 16 GPEs in block 00 to 0F
+2020-07-30T14:02:51,458886+00:00 ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+2020-07-30T14:02:51,460892+00:00 acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
+2020-07-30T14:02:51,465888+00:00 PCI host bridge to bus 0000:00
+2020-07-30T14:02:51,466209+00:00 pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+2020-07-30T14:02:51,467720+00:00 pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+2020-07-30T14:02:51,470207+00:00 pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+2020-07-30T14:02:51,472165+00:00 pci_bus 0000:00: root bus resource [mem 0x80000000-0xfebfefff window]
+2020-07-30T14:02:51,474207+00:00 pci_bus 0000:00: root bus resource [bus 00-ff]
+2020-07-30T14:02:51,475225+00:00 pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+2020-07-30T14:02:51,480191+00:00 pci 0000:00:01.0: [8086:7110] type 00 class 0x060100
+2020-07-30T14:02:51,503894+00:00 pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+2020-07-30T14:02:51,530284+00:00 pci 0000:00:01.3: quirk: [io  0xb000-0xb03f] claimed by PIIX4 ACPI
+2020-07-30T14:02:51,532919+00:00 pci 0000:00:03.0: [1af4:1004] type 00 class 0x000000
+2020-07-30T14:02:51,542216+00:00 pci 0000:00:03.0: reg 0x10: [io  0xc040-0xc07f]
+2020-07-30T14:02:51,550119+00:00 pci 0000:00:03.0: reg 0x14: [mem 0x80001000-0x8000107f]
+2020-07-30T14:02:51,570201+00:00 pci 0000:00:04.0: [1af4:1000] type 00 class 0x020000
+2020-07-30T14:02:51,580886+00:00 pci 0000:00:04.0: reg 0x10: [io  0xc000-0xc03f]
+2020-07-30T14:02:51,589093+00:00 pci 0000:00:04.0: reg 0x14: [mem 0x80000000-0x8000007f]
+2020-07-30T14:02:51,606373+00:00 pci 0000:00:05.0: [1af4:1002] type 00 class 0x00ff00
+2020-07-30T14:02:51,610215+00:00 pci 0000:00:05.0: reg 0x10: [io  0xc0a0-0xc0bf]
+2020-07-30T14:02:51,638483+00:00 pci 0000:00:06.0: [1af4:1005] type 00 class 0x00ff00
+2020-07-30T14:02:51,650214+00:00 pci 0000:00:06.0: reg 0x10: [io  0xc080-0xc09f]
+2020-07-30T14:02:51,659915+00:00 pci 0000:00:06.0: reg 0x14: [mem 0x80002000-0x8000203f]
+2020-07-30T14:02:51,688399+00:00 ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+2020-07-30T14:02:51,690361+00:00 ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+2020-07-30T14:02:51,694258+00:00 ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+2020-07-30T14:02:51,696594+00:00 ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+2020-07-30T14:02:51,699538+00:00 ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+2020-07-30T14:02:51,702258+00:00 vgaarb: loaded
+2020-07-30T14:02:51,703215+00:00 ACPI: bus type USB registered
+2020-07-30T14:02:51,704364+00:00 usbcore: registered new interface driver usbfs
+2020-07-30T14:02:51,705308+00:00 usbcore: registered new interface driver hub
+2020-07-30T14:02:51,706249+00:00 usbcore: registered new device driver usb
+2020-07-30T14:02:51,707776+00:00 pps_core: LinuxPPS API ver. 1 registered
+2020-07-30T14:02:51,710204+00:00 pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+2020-07-30T14:02:51,712180+00:00 PTP clock support registered
+2020-07-30T14:02:51,714228+00:00 EDAC MC: Ver: 3.0.0
+2020-07-30T14:02:51,714472+00:00 Registered efivars operations
+2020-07-30T14:02:51,715672+00:00 PCI: Using ACPI for IRQ routing
+2020-07-30T14:02:51,718492+00:00 NetLabel: Initializing
+2020-07-30T14:02:51,719209+00:00 NetLabel:  domain hash size = 128
+2020-07-30T14:02:51,720526+00:00 NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+2020-07-30T14:02:51,721623+00:00 NetLabel:  unlabeled traffic allowed by default
+2020-07-30T14:02:51,722298+00:00 clocksource: Switched to clocksource kvm-clock
+2020-07-30T14:02:51,739590+00:00 VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+2020-07-30T14:02:51,742124+00:00 AppArmor: AppArmor Filesystem Enabled
+2020-07-30T14:02:51,742934+00:00 pnp: PnP ACPI init
+2020-07-30T14:02:51,744153+00:00 pnp: PnP ACPI: found 7 devices
+2020-07-30T14:02:51,749383+00:00 thermal_sys: Registered thermal governor 'fair_share'
+2020-07-30T14:02:51,749384+00:00 thermal_sys: Registered thermal governor 'bang_bang'
+2020-07-30T14:02:51,750650+00:00 thermal_sys: Registered thermal governor 'step_wise'
+2020-07-30T14:02:51,752075+00:00 thermal_sys: Registered thermal governor 'user_space'
+2020-07-30T14:02:51,753370+00:00 thermal_sys: Registered thermal governor 'power_allocator'
+2020-07-30T14:02:51,759209+00:00 clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+2020-07-30T14:02:51,763082+00:00 pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+2020-07-30T14:02:51,764220+00:00 pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+2020-07-30T14:02:51,765867+00:00 pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+2020-07-30T14:02:51,767183+00:00 pci_bus 0000:00: resource 7 [mem 0x80000000-0xfebfefff window]
+2020-07-30T14:02:51,768481+00:00 NET: Registered protocol family 2
+2020-07-30T14:02:51,769652+00:00 tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+2020-07-30T14:02:51,770834+00:00 TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+2020-07-30T14:02:51,772295+00:00 TCP bind hash table entries: 8192 (order: 5, 131072 bytes, linear)
+2020-07-30T14:02:51,773592+00:00 TCP: Hash tables configured (established 8192 bind 8192)
+2020-07-30T14:02:51,775619+00:00 UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+2020-07-30T14:02:51,776740+00:00 UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+2020-07-30T14:02:51,779962+00:00 NET: Registered protocol family 1
+2020-07-30T14:02:51,780590+00:00 NET: Registered protocol family 44
+2020-07-30T14:02:51,781302+00:00 pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+2020-07-30T14:02:51,783448+00:00 PCI: CLS 0 bytes, default 64
+2020-07-30T14:02:51,784647+00:00 Trying to unpack rootfs image as initramfs...
+2020-07-30T14:02:52,403032+00:00 Freeing initrd memory: 35340K
+2020-07-30T14:02:52,406464+00:00 clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x39a85c9bff6, max_idle_ns: 881590591483 ns
+2020-07-30T14:02:52,409681+00:00 clocksource: Switched to clocksource tsc
+2020-07-30T14:02:52,410878+00:00 check: Scanning for low memory corruption every 60 seconds
+2020-07-30T14:02:52,414317+00:00 workingset: timestamp_bits=36 max_order=18 bucket_order=0
+2020-07-30T14:02:52,417449+00:00 zbud: loaded
+2020-07-30T14:02:52,418524+00:00 squashfs: version 4.0 (2009/01/31) Phillip Lougher
+2020-07-30T14:02:52,420270+00:00 fuse: init (API version 7.31)
+2020-07-30T14:02:52,428034+00:00 Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+2020-07-30T14:02:52,429351+00:00 io scheduler mq-deadline registered
+2020-07-30T14:02:52,430471+00:00 shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+2020-07-30T14:02:52,431705+00:00 input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+2020-07-30T14:02:52,433168+00:00 ACPI: Power Button [PWRF]
+2020-07-30T14:02:52,434425+00:00 input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+2020-07-30T14:02:52,436745+00:00 ACPI: Sleep Button [SLPF]
+2020-07-30T14:02:52,440864+00:00 PCI Interrupt Link [LNKC] enabled at IRQ 11
+2020-07-30T14:02:52,444769+00:00 virtio-pci 0000:00:03.0: virtio_pci: leaving for legacy driver
+2020-07-30T14:02:52,455816+00:00 PCI Interrupt Link [LNKD] enabled at IRQ 10
+2020-07-30T14:02:52,457069+00:00 virtio-pci 0000:00:04.0: virtio_pci: leaving for legacy driver
+2020-07-30T14:02:52,464550+00:00 PCI Interrupt Link [LNKA] enabled at IRQ 10
+2020-07-30T14:02:52,465946+00:00 virtio-pci 0000:00:05.0: virtio_pci: leaving for legacy driver
+2020-07-30T14:02:52,473049+00:00 PCI Interrupt Link [LNKB] enabled at IRQ 11
+2020-07-30T14:02:52,474463+00:00 virtio-pci 0000:00:06.0: virtio_pci: leaving for legacy driver
+2020-07-30T14:02:52,490398+00:00 Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+2020-07-30T14:02:52,514198+00:00 00:03: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+2020-07-30T14:02:52,537783+00:00 00:04: ttyS1 at I/O 0x2f8 (irq = 3, base_baud = 115200) is a 16550A
+2020-07-30T14:02:52,561346+00:00 00:05: ttyS2 at I/O 0x3e8 (irq = 6, base_baud = 115200) is a 16550A
+2020-07-30T14:02:52,585199+00:00 00:06: ttyS3 at I/O 0x2e8 (irq = 7, base_baud = 115200) is a 16550A
+2020-07-30T14:02:52,590180+00:00 Linux agpgart interface v0.103
+2020-07-30T14:02:52,600759+00:00 tpm_tis MSFT0101:00: 2.0 TPM (device-id 0x9009, rev-id 0)
+2020-07-30T14:02:52,615110+00:00 loop: module loaded
+2020-07-30T14:02:52,634286+00:00 scsi host0: Virtio SCSI HBA
+2020-07-30T14:02:52,640830+00:00 libphy: Fixed MDIO Bus: probed
+2020-07-30T14:02:52,642162+00:00 tun: Universal TUN/TAP device driver, 1.6
+2020-07-30T14:02:52,643972+00:00 PPP generic driver version 2.4.2
+2020-07-30T14:02:52,645281+00:00 ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+2020-07-30T14:02:52,649038+00:00 ehci-pci: EHCI PCI platform driver
+2020-07-30T14:02:52,650287+00:00 ehci-platform: EHCI generic platform driver
+2020-07-30T14:02:52,651525+00:00 ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+2020-07-30T14:02:52,652910+00:00 ohci-pci: OHCI PCI platform driver
+2020-07-30T14:02:52,654006+00:00 ohci-platform: OHCI generic platform driver
+2020-07-30T14:02:52,655284+00:00 uhci_hcd: USB Universal Host Controller Interface driver
+2020-07-30T14:02:52,656687+00:00 i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+2020-07-30T14:02:52,662034+00:00 serio: i8042 KBD port at 0x60,0x64 irq 1
+2020-07-30T14:02:52,662914+00:00 serio: i8042 AUX port at 0x60,0x64 irq 12
+2020-07-30T14:02:52,664154+00:00 mousedev: PS/2 mouse device common for all mice
+2020-07-30T14:02:52,665523+00:00 rtc_cmos 00:00: RTC can wake from S4
+2020-07-30T14:02:52,667135+00:00 rtc_cmos 00:00: registered as rtc0
+2020-07-30T14:02:52,668011+00:00 rtc_cmos 00:00: alarms up to one day, 114 bytes nvram
+2020-07-30T14:02:52,669440+00:00 i2c /dev entries driver
+2020-07-30T14:02:52,670498+00:00 device-mapper: uevent: version 1.0.3
+2020-07-30T14:02:52,671628+00:00 device-mapper: ioctl: 4.40.0-ioctl (2019-01-18) initialised: dm-devel@redhat.com
+2020-07-30T14:02:52,673784+00:00 platform eisa.0: Probing EISA bus 0
+2020-07-30T14:02:52,689816+00:00 platform eisa.0: EISA: Detected 0 cards
+2020-07-30T14:02:52,690682+00:00 intel_pstate: CPU model not supported
+2020-07-30T14:02:52,691577+00:00 ledtrig-cpu: registered to indicate activity on CPUs
+2020-07-30T14:02:52,692930+00:00 EFI Variables Facility v0.08 2004-May-17
+2020-07-30T14:02:52,698689+00:00 NET: Registered protocol family 10
+2020-07-30T14:02:52,705875+00:00 Segment Routing with IPv6
+2020-07-30T14:02:52,707994+00:00 NET: Registered protocol family 17
+2020-07-30T14:02:52,711139+00:00 RAS: Correctable Errors collector initialized.
+2020-07-30T14:02:52,712651+00:00 sched_clock: Marking stable (1542145518, 168872161)->(1718290867, -7273188)
+2020-07-30T14:02:52,715020+00:00 registered taskstats version 1
+2020-07-30T14:02:52,721309+00:00 zswap: loaded using pool lzo/zbud
+2020-07-30T14:02:52,735384+00:00 AppArmor: AppArmor sha1 policy hashing enabled
+2020-07-30T14:02:52,741297+00:00 integrity: Loading X.509 certificate: UEFI:db
+2020-07-30T14:02:52,745810+00:00 integrity: Loading X.509 certificate: UEFI:db
+2020-07-30T14:02:52,752759+00:00 ima: Allocated hash algorithm: sha1
+2020-07-30T14:02:52,765760+00:00  sda: sda1 sda14 sda15
+2020-07-30T14:02:52,823595+00:00 No architecture policies found
+2020-07-30T14:02:52,824634+00:00 evm: Initialising EVM extended attributes:
+2020-07-30T14:02:52,825897+00:00 evm: security.selinux
+2020-07-30T14:02:52,826541+00:00 evm: security.SMACK64
+2020-07-30T14:02:52,827428+00:00 evm: security.SMACK64EXEC
+2020-07-30T14:02:52,828287+00:00 evm: security.SMACK64TRANSMUTE
+2020-07-30T14:02:52,829179+00:00 evm: security.SMACK64MMAP
+2020-07-30T14:02:52,830773+00:00 evm: security.apparmor
+2020-07-30T14:02:52,831436+00:00 evm: security.ima
+2020-07-30T14:02:52,832265+00:00 evm: security.capability
+2020-07-30T14:02:52,833159+00:00 evm: HMAC attrs: 0x1
+2020-07-30T14:02:52,834336+00:00 PM:   Magic number: 12:706:31
+2020-07-30T14:02:52,835408+00:00 rtc_cmos 00:00: setting system clock to 2020-07-30T14:02:53 UTC (1596117773)
+2020-07-30T14:02:52,839690+00:00 Freeing unused decrypted memory: 2040K
+2020-07-30T14:02:52,841903+00:00 Freeing unused kernel image memory: 2664K
+2020-07-30T14:02:52,846272+00:00 Write protecting the kernel read-only data: 22528k
+2020-07-30T14:02:52,848664+00:00 Freeing unused kernel image memory: 2008K
+2020-07-30T14:02:52,850977+00:00 Freeing unused kernel image memory: 1508K
+2020-07-30T14:02:52,859924+00:00 x86/mm: Checked W+X mappings: passed, no W+X pages found.
+2020-07-30T14:02:52,861304+00:00 x86/mm: Checking user space page tables
+2020-07-30T14:02:52,869995+00:00 x86/mm: Checked W+X mappings: passed, no W+X pages found.
+2020-07-30T14:02:52,870915+00:00 Run /init as init process
+2020-07-30T14:02:52,871897+00:00 input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+2020-07-30T14:02:52,999473+00:00 cryptd: max_cpu_qlen set to 1000
+2020-07-30T14:02:53,021678+00:00 AVX2 version of gcm_enc/dec engaged.
+2020-07-30T14:02:53,022647+00:00 AES CTR mode by8 optimization enabled
+2020-07-30T14:02:53,075495+00:00 virtio_net virtio1 ens4: renamed from eth0
+2020-07-30T14:02:53,832391+00:00 input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+2020-07-30T14:02:54,274220+00:00 raid6: avx512x4 gen() 28067 MB/s
+2020-07-30T14:02:54,322221+00:00 raid6: avx512x4 xor() 15322 MB/s
+2020-07-30T14:02:54,370218+00:00 raid6: avx512x2 gen() 27181 MB/s
+2020-07-30T14:02:54,418217+00:00 raid6: avx512x2 xor() 17989 MB/s
+2020-07-30T14:02:54,466220+00:00 raid6: avx512x1 gen() 25297 MB/s
+2020-07-30T14:02:54,514219+00:00 raid6: avx512x1 xor() 14419 MB/s
+2020-07-30T14:02:54,562224+00:00 raid6: avx2x4   gen() 23121 MB/s
+2020-07-30T14:02:54,610219+00:00 raid6: avx2x4   xor() 15058 MB/s
+2020-07-30T14:02:54,658217+00:00 raid6: avx2x2   gen() 22149 MB/s
+2020-07-30T14:02:54,706223+00:00 raid6: avx2x2   xor() 14646 MB/s
+2020-07-30T14:02:54,754220+00:00 raid6: avx2x1   gen() 17993 MB/s
+2020-07-30T14:02:54,802218+00:00 raid6: avx2x1   xor() 13316 MB/s
+2020-07-30T14:02:54,850223+00:00 raid6: sse2x4   gen()  9242 MB/s
+2020-07-30T14:02:54,898219+00:00 raid6: sse2x4   xor()  5899 MB/s
+2020-07-30T14:02:54,946219+00:00 raid6: sse2x2   gen()  8799 MB/s
+2020-07-30T14:02:54,994219+00:00 raid6: sse2x2   xor()  5643 MB/s
+2020-07-30T14:02:55,042226+00:00 raid6: sse2x1   gen()  7835 MB/s
+2020-07-30T14:02:55,090220+00:00 raid6: sse2x1   xor()  4297 MB/s
+2020-07-30T14:02:55,090989+00:00 raid6: using algorithm avx512x4 gen() 28067 MB/s
+2020-07-30T14:02:55,092005+00:00 raid6: .... xor() 15322 MB/s, rmw enabled
+2020-07-30T14:02:55,092882+00:00 raid6: using avx512x2 recovery algorithm
+2020-07-30T14:02:55,095401+00:00 xor: automatically using best checksumming function   avx
+2020-07-30T14:02:55,097960+00:00 async_tx: api initialized (async)
+2020-07-30T14:02:55,149190+00:00 Btrfs loaded, crc32c=crc32c-intel
+2020-07-30T14:02:55,223298+00:00 EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+2020-07-30T14:02:55,717355+00:00 systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+2020-07-30T14:02:55,721698+00:00 systemd[1]: Detected virtualization kvm.
+2020-07-30T14:02:55,722937+00:00 systemd[1]: Detected architecture x86-64.
+2020-07-30T14:02:55,741704+00:00 systemd[1]: Set hostname to <ubuntu>.
+2020-07-30T14:02:55,750868+00:00 systemd[1]: Initializing machine ID from KVM UUID.
+2020-07-30T14:02:55,752438+00:00 systemd[1]: Installed transient /etc/machine-id file.
+2020-07-30T14:02:56,089777+00:00 systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+2020-07-30T14:02:56,103237+00:00 systemd[1]: Created slice User and Session Slice.
+2020-07-30T14:02:56,114907+00:00 systemd[1]: Created slice System Slice.
+2020-07-30T14:02:56,126643+00:00 systemd[1]: Listening on Journal Socket (/dev/log).
+2020-07-30T14:02:56,198007+00:00 Loading iSCSI transport class v2.0-870.
+2020-07-30T14:02:56,284845+00:00 EXT4-fs (sda1): re-mounted. Opts: (null)
+2020-07-30T14:02:56,715214+00:00 systemd-journald[399]: Received request to flush runtime journal from PID 1
+2020-07-30T14:02:57,052282+00:00 RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+2020-07-30T14:03:03,306909+00:00 EXT4-fs (sda1): resizing filesystem from 548091 to 2593019 blocks
+2020-07-30T14:03:03,501518+00:00 EXT4-fs (sda1): resized filesystem to 2593019
+2020-07-30T14:03:04,684533+00:00 bpfilter: Loaded bpfilter_umh pid 952
+2020-07-30T14:14:08,331924+00:00 aufs 4.x-rcN-20190805
+2020-07-30T14:24:21,457121+00:00 bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+2020-07-30T14:24:21,649902+00:00 Initializing XFRM netlink socket
+2020-07-30T14:26:18,637857+00:00 docker0: port 1(veth357c658) entered blocking state
+2020-07-30T14:26:18,637859+00:00 docker0: port 1(veth357c658) entered disabled state
+2020-07-30T14:26:18,638497+00:00 device veth357c658 entered promiscuous mode
+2020-07-30T14:26:20,096231+00:00 eth0: renamed from vethd6e99b9
+2020-07-30T14:26:20,112295+00:00 IPv6: ADDRCONF(NETDEV_CHANGE): veth357c658: link becomes ready
+2020-07-30T14:26:20,112345+00:00 docker0: port 1(veth357c658) entered blocking state
+2020-07-30T14:26:20,112346+00:00 docker0: port 1(veth357c658) entered forwarding state
+2020-07-30T14:26:20,112386+00:00 IPv6: ADDRCONF(NETDEV_CHANGE): docker0: link becomes ready
+2020-08-05T06:17:08,680718+00:00 SGI XFS with ACLs, security attributes, realtime, no debug enabled
+2020-08-05T06:17:08,709351+00:00 JFS: nTxBlock = 7837, nTxLock = 62702
+2020-08-05T06:17:08,729237+00:00 ntfs: driver 2.1.32 [Flags: R/O MODULE].
+2020-08-05T06:17:08,765473+00:00 QNX4 filesystem 0.2.3 registered.
+2020-08-14T06:27:44,980686+00:00 virtio_balloon virtio2: Out of puff! Can't get 1 pages
+2020-09-18T07:45:44,547895+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.157 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=54624 DPT=80 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0
+2020-09-18T07:48:03,438630+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=59950 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:01:28,262879+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.62 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=60867 DPT=80 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0
+2020-09-18T08:17:33,821503+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61318 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:34,714536+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61320 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:35,676462+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61326 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:36,445962+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61330 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:37,213733+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61335 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:38,004529+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61337 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:38,728240+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61340 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:39,451622+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61344 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:40,178340+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61347 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:17:40,913598+00:00 naisdevice-gw-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.7 DST=35.190.123.235 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61351 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:01,732234+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0
+2020-09-18T08:25:01,861839+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0
+2020-09-18T08:25:02,116087+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0
+2020-09-18T08:25:02,738369+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:02,870099+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:03,119705+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:03,745864+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:03,877480+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:04,129764+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:04,757371+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:04,887428+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:05,138185+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:05,763333+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:05,897557+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:06,147165+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:06,767435+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:06,904061+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:07,151351+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:08,784403+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:08,913357+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:09,165193+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:12,811353+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:12,940301+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:13,190628+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:20,858982+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:20,988278+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:21,242693+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:36,961452+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:37,091453+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:25:37,349776+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:09,191241+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=48 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61241 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:09,317509+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=48 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61242 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:09,568682+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=48 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61243 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:17,605562+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0
+2020-09-18T08:26:17,861817+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0
+2020-09-18T08:26:18,614850+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:18,869762+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:19,621457+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:19,882453+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:20,633578+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:20,889937+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:21,640258+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:21,895281+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:22,646433+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:22,901082+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:24,665966+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:24,918822+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:28,688735+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:28,943936+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:36,722740+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:36,981436+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:52,848699+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61266 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+2020-09-18T08:26:53,103019+00:00 naisdevice-fwd: IN=wg0 OUT=ens4 MAC= SRC=192.168.14.92 DST=35.190.76.128 LEN=64 TOS=0x00 PREC=0x00 TTL=63 ID=0 DF PROTO=TCP SPT=61267 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0

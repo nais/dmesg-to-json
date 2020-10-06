@@ -1,10 +1,11 @@
 // std-lib imports
 use std::error::Error;
+use std::path::PathBuf;
 
 // Non-std lib imports
 use assert_cmd::cmd::Command;
 use indoc::indoc;
-use predicates::prelude::predicate;
+use predicates::prelude::{predicate, PredicateBooleanExt};
 
 #[test]
 fn long_help_works() -> Result<(), Box<dyn Error>> {
@@ -67,5 +68,21 @@ fn skip_irrelevant_lines() -> Result<(), Box<dyn Error>> {
 		.assert()
 		.success()
 		.stdout(predicate::str::is_empty());
+	Ok(())
+}
+
+#[test]
+fn include_relevant_lines() -> Result<(), Box<dyn Error>> {
+	let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+	file_path.push("tests/data/full_dmesg_output.txt");
+	let contents = std::fs::read_to_string(file_path)?;
+	let mut cli = Command::cargo_bin(env!("CARGO_PKG_NAME"))?;
+	cli.write_stdin(contents).assert().success().stdout(
+		predicate::str::diff(std::fs::read_to_string(PathBuf::from(format!(
+			"{}/tests/data/full_dmesg_output_after_dmesg-to-json.txt",
+			env!("CARGO_MANIFEST_DIR")
+		)))?)
+		.not(),
+	);
 	Ok(())
 }
