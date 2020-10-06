@@ -118,3 +118,17 @@ pub fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, T
 	);
 	Ok((log_level, timestamp, message.to_owned()))
 }
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	#[test]
+	fn check_for_unexpected_kernel_loglevel() {
+		let input = "8 2020-07-30T14:02:51,000000+00:00 blabla";
+		match get_log_line_regex_matches(&input).map_err(|e| e) {
+			Ok(_) => assert_eq!(true, false),
+			Err(e) => assert_eq!(true, e.is::<crate::utils::KernelLineError>(),),
+		};
+	}
+}
