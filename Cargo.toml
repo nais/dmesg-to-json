@@ -5,7 +5,7 @@ authors = [
     "Christian C. <christian.chavez@nav.no>",
     "Christer Edvartsen <christer.edvartsen@nav.no>",
 ]
-edition = "2018"
+edition = "2021"
 description = """
 A simple rust application for following Linux kernel log lines, filtering them, and converting them to json.\
 """
