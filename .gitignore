@@ -3,3 +3,7 @@
 
 # Rust
 target/
+
+# Nix
+.direnv/
+result
