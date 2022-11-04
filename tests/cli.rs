@@ -8,12 +8,12 @@ use indoc::indoc;
 use predicates::prelude::{predicate, PredicateBooleanExt};
 
 #[test]
-fn long_help_works() -> Result<(), Box<dyn Error>> {
+fn help_works() -> Result<(), Box<dyn Error>> {
 	let mut cli = Command::cargo_bin(env!("CARGO_PKG_NAME"))?;
 	cli.arg("--help")
 		.assert()
 		.success()
-		.stdout(predicate::str::contains(env!("CARGO_PKG_DESCRIPTION")));
+		.stdout(predicate::str::contains(env!("CARGO_PKG_NAME")));
 	Ok(())
 }
 

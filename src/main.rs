@@ -3,31 +3,25 @@ use std::error::Error;
 use std::io::{self, BufRead};
 
 // Third-party imports
-#[macro_use]
-extern crate lazy_static;
-use structopt::{
-	clap::AppSettings::{ColorAuto, ColoredHelp},
-	StructOpt,
-};
+use clap::Parser;
 
 // Local imports
 mod structs;
 mod utils;
 
-#[derive(Debug, StructOpt)]
-#[structopt(setting(ColorAuto), setting(ColoredHelp), about)]
+#[derive(Debug, Parser)]
 struct Cli {
 	/// Verbosity level (-v, -vv, etc...)
-	#[structopt(short, parse(from_occurrences))]
-	verbosity_level: usize,
+	#[arg(short, action = clap::ArgAction::Count)]
+	verbosity_level: u8,
 
 	/// String to filter log line prefix with
-	#[structopt(short, long)]
+	#[arg(short, long)]
 	print_all: bool,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-	let args = Cli::from_args();
+	let args = Cli::parse();
 	if 2 <= args.verbosity_level {
 		dbg!(&args);
 	}
