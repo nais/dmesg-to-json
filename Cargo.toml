@@ -27,6 +27,6 @@ humantime-serde = "1"
 clap = { version = "4", features = ["cargo", "env", "derive", "deprecated", "unicode", "wrap_help"] }
 
 [dev-dependencies]
-predicates = "1"
+predicates = "2"
 assert_cmd = "1"
 indoc = "1"
