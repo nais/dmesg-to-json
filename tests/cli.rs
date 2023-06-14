@@ -73,16 +73,22 @@ fn skip_irrelevant_lines() -> Result<(), Box<dyn Error>> {
 
 #[test]
 fn include_relevant_lines() -> Result<(), Box<dyn Error>> {
-	let mut file_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-	file_path.push("tests/data/full_dmesg_output.txt");
-	let contents = std::fs::read_to_string(file_path)?;
-	let mut cli = Command::cargo_bin(env!("CARGO_PKG_NAME"))?;
-	cli.write_stdin(contents).assert().success().stdout(
-		predicate::str::diff(std::fs::read_to_string(PathBuf::from(format!(
-			"{}/tests/data/full_dmesg_output_after_dmesg-to-json.txt",
-			env!("CARGO_MANIFEST_DIR")
-		)))?)
-		.not(),
-	);
+	let root_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+	Command::cargo_bin(env!("CARGO_PKG_NAME"))?
+		.write_stdin(std::fs::read_to_string(
+			root_dir.join("tests/data/full_dmesg_output.txt"),
+		)?)
+		.assert()
+		.success()
+		.stdout(
+			predicate::str::diff(
+				std::fs::read_to_string(
+					root_dir.join("tests/data/full_dmesg_output_after_dmesg-to-json.txt"),
+				)?
+				.trim()
+				.to_string(),
+			)
+			.not(),
+		);
 	Ok(())
 }
