@@ -30,7 +30,7 @@ impl IptablesLogLine {
 					"Unable to find split dmesg-line by ': ':\n\n{:?}",
 					input_string
 				))
-			}
+			},
 		};
 		let parse_map: HashMap<String, String> = body
 			.split(" ")
