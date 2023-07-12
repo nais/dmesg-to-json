@@ -29,4 +29,4 @@ clap = { version = "4", features = ["cargo", "env", "derive", "deprecated", "uni
 [dev-dependencies]
 predicates = "2"
 assert_cmd = "1"
-indoc = "1"
+indoc = "2"
