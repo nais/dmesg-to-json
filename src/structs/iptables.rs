@@ -4,7 +4,7 @@ use std::net::Ipv4Addr;
 use std::time::SystemTime;
 
 // Third-party imports
-use anyhow::{anyhow, Result};
+use anyhow::{Result, anyhow};
 use humantime_serde::Serde;
 use itertools::Itertools;
 use serde::{Deserialize, Serialize};
@@ -29,7 +29,7 @@ impl IptablesLogLine {
 				return Err(anyhow!(
 					"Unable to find split dmesg-line by ': ':\n\n{:?}",
 					input_string
-				))
+				));
 			},
 		};
 		let parse_map: HashMap<String, String> = body

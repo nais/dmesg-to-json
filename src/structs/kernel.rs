@@ -40,7 +40,9 @@ impl std::fmt::Display for KernelLogLevel {
 pub enum KernelLineError {
 	#[error("Regex matched zero groups\nInput:\n\t{input:?}\nPattern\n\t{pattern:?}")]
 	NoRegexMatches { input: String, pattern: String },
-	#[error("Missing expected regex group\nInput:\n\t{input:?}\nPattern\n\tr'{pattern:?}'\nGroup name:\n\t'{group_name:?}'")]
+	#[error(
+		"Missing expected regex group\nInput:\n\t{input:?}\nPattern\n\tr'{pattern:?}'\nGroup name:\n\t'{group_name:?}'"
+	)]
 	MissingRegexGroupMatch {
 		input: String,
 		pattern: String,

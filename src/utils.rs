@@ -1,5 +1,5 @@
 // Third-party imports
-use anyhow::{anyhow, Result};
+use anyhow::{Result, anyhow};
 use humantime::Timestamp;
 use lazy_static::lazy_static;
 
@@ -47,7 +47,7 @@ fn get_regex_match_by_name<'a>(
 				group_name: group_name.to_string(),
 				pattern: pattern.to_string(),
 				input: input_string.to_string(),
-			}))
+			}));
 		},
 	}
 }
@@ -61,7 +61,7 @@ pub fn parse_dmesg_iso_timestamp(input_string: &str) -> Result<Timestamp> {
 			return Err(anyhow!(
 				"Unexpected error occured when parsing timestamp!\n\t{}",
 				e
-			))
+			));
 		},
 	};
 	Ok(Timestamp::from(timestamp))
@@ -77,7 +77,7 @@ pub fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, T
 			return Err(anyhow!(KernelLineError::NoRegexMatches {
 				pattern: KERNEL_LINE_REGEX_PATTERN.to_string(),
 				input: input_line.to_string(),
-			}))
+			}));
 		},
 	};
 
@@ -111,7 +111,7 @@ pub fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, T
 				x => {
 					return Err(anyhow!(KernelLineError::UnexpectedKernelLogLevel {
 						input: x.to_string()
-					}))
+					}));
 				},
 			},
 			Err(_) => KernelLogLevel::Info,

@@ -5,7 +5,7 @@ use std::path::PathBuf;
 // Non-std lib imports
 use assert_cmd::cmd::Command;
 use indoc::indoc;
-use predicates::prelude::{predicate, PredicateBooleanExt};
+use predicates::prelude::{PredicateBooleanExt, predicate};
 
 #[test]
 fn help_works() -> Result<(), Box<dyn Error>> {
