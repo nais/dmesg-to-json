@@ -23,7 +23,7 @@ impl IptablesLogLine {
 		input_string: &str,
 		timestamp: &SystemTime,
 	) -> Result<IptablesLogLine> {
-		let (iptables_prefix, body) = match input_string.splitn(2, ": ").next_tuple() {
+		let (iptables_prefix, body) = match input_string.split_once(": ") {
 			Some(tuple) => tuple,
 			None => {
 				return Err(anyhow!(

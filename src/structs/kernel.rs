@@ -65,9 +65,9 @@ impl KernelLine {
 		let (log_level, timestamp, message) = utils::get_log_line_regex_matches(line)?;
 
 		let result = KernelLine {
-			timestamp: timestamp,
+			timestamp,
 			message: message.to_owned(),
-			log_level: log_level,
+			log_level,
 		};
 		Ok(result)
 	}

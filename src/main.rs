@@ -29,12 +29,12 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 	let stdin = io::stdin();
 	for input_line in stdin.lock().lines() {
-		let mut line = input_line?;
+		let line = input_line?;
 		if 2 < args.verbosity_level {
 			eprintln!("{line}");
 		}
 
-		let kernel_line = structs::KernelLine::new(&mut line)?;
+		let kernel_line = structs::KernelLine::new(&line)?;
 		if !kernel_line.message.starts_with(&args.filter) {
 			continue;
 		}

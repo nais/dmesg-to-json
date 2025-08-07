@@ -12,14 +12,12 @@ lazy_static! {
 			.ignore_whitespace(true)
 			.build()
 		{
-			Err(e) => panic!(
-				"Static variable KERNEL_LINE_REGEX unable to initialize!\nError:\n\t{}",
-				e
-			),
+			Err(e) =>
+				panic!("Static variable KERNEL_LINE_REGEX unable to initialize!\nError:\n\t{e}"),
 			Ok(regex) => regex,
 		};
 }
-static KERNEL_LINE_REGEX_PATTERN: &'static str = r#"
+static KERNEL_LINE_REGEX_PATTERN: &str = r#"
     ^                       # Start of string _and_ line!
     (<(?P<level>\d)>)?      # Potential first match: The log level
     (?P<timestamp>
@@ -42,13 +40,11 @@ fn get_regex_match_by_name<'a>(
 ) -> Result<&'a str> {
 	match captures.name(group_name) {
 		Some(regex_match) => Ok(regex_match.as_str()),
-		None => {
-			return Err(anyhow!(KernelLineError::MissingRegexGroupMatch {
-				group_name: group_name.to_string(),
-				pattern: pattern.to_string(),
-				input: input_string.to_string(),
-			}));
-		},
+		None => Err(anyhow!(KernelLineError::MissingRegexGroupMatch {
+			group_name: group_name.to_string(),
+			pattern: pattern.to_string(),
+			input: input_string.to_string(),
+		})),
 	}
 }
 
@@ -85,20 +81,15 @@ pub fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, T
 	let (timestamp, message, log_level) = (
 		match get_regex_match_by_name(
 			&captures,
-			&input_line,
-			&KERNEL_LINE_REGEX_PATTERN,
+			input_line,
+			KERNEL_LINE_REGEX_PATTERN,
 			"timestamp",
 		) {
 			Err(e) => return Err(e),
 			Ok(string) => parse_dmesg_iso_timestamp(string)?,
 		},
-		get_regex_match_by_name(
-			&captures,
-			&input_line,
-			&KERNEL_LINE_REGEX_PATTERN,
-			"message",
-		)?,
-		match get_regex_match_by_name(&captures, &input_line, &KERNEL_LINE_REGEX_PATTERN, "level") {
+		get_regex_match_by_name(&captures, input_line, KERNEL_LINE_REGEX_PATTERN, "message")?,
+		match get_regex_match_by_name(&captures, input_line, KERNEL_LINE_REGEX_PATTERN, "level") {
 			Ok(lvl) => match lvl {
 				"0" => KernelLogLevel::Emergency,
 				"1" => KernelLogLevel::Alert,
