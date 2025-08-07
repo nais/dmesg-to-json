@@ -20,22 +20,16 @@
     };
   };
 
-  outputs = {
-    self,
-    crane,
-    flake-utils,
-    nixpkgs,
-    rust-overlay,
-  }:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {
+  outputs = inputs:
+    inputs.flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = [(import rust-overlay)];
+        overlays = [(import inputs.rust-overlay)];
       };
 
       rustToolchain = pkgs.rust-bin.stable.latest.default;
       # Set-up build dependencies and configure rust
-      craneLib = (crane.mkLib pkgs).overrideToolchain rustToolchain;
+      craneLib = (inputs.crane.mkLib pkgs).overrideToolchain rustToolchain;
 
       # Shamelessly stolen from:
       # https://github.com/fedimint/fedimint/blob/66519d5e978e22bb10a045f406101891e1bb7eb5/flake.nix#L99
@@ -96,7 +90,6 @@
             cargo-outdated
 
             # Editor stuffs
-            helix
             lldb
             rust-analyzer
           ])
