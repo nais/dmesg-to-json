@@ -15,6 +15,10 @@ struct Cli {
 	/// 2+: Print each line as its received to stderr, before attempted json transform
 	#[arg(short, action = clap::ArgAction::Count)]
 	verbosity_level: u8,
+
+	/// String to filter log line prefix with
+	#[arg(short, long, default_value = "naisdevice-fwd: ")]
+	filter: String,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -31,7 +35,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 		}
 
 		let kernel_line = structs::KernelLine::new(&mut line)?;
-		if !kernel_line.message.starts_with("naisdevice-fwd: ") {
+		if !kernel_line.message.starts_with(&args.filter) {
 			continue;
 		}
 
