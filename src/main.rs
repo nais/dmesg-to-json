@@ -12,12 +12,9 @@ mod utils;
 #[derive(Debug, Parser)]
 struct Cli {
 	/// Verbosity level (-v, -vv, etc...)
+	/// 2+: Print each line as its received to stderr, before attempted json transform
 	#[arg(short, action = clap::ArgAction::Count)]
 	verbosity_level: u8,
-
-	/// String to filter log line prefix with
-	#[arg(short, long)]
-	print_all: bool,
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -30,14 +27,11 @@ fn main() -> Result<(), Box<dyn Error>> {
 	for input_line in stdin.lock().lines() {
 		let mut line = input_line?;
 		if 2 < args.verbosity_level {
-			eprintln!("Received line: {}", &line);
+			eprintln!("{line}");
 		}
+
 		let kernel_line = structs::KernelLine::new(&mut line)?;
-		if args.print_all {
-			println!("{}", &kernel_line.message);
-			continue;
-		}
-		if !args.print_all && !kernel_line.message.starts_with("naisdevice-fwd: ") {
+		if !kernel_line.message.starts_with("naisdevice-fwd: ") {
 			continue;
 		}
 
