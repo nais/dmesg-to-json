@@ -1,22 +1,25 @@
+use std::sync::LazyLock;
+
 // Third-party imports
 use anyhow::{Result, anyhow};
 use humantime::Timestamp;
-use lazy_static::lazy_static;
 
 // Local imports
 use crate::structs::{KernelLineError, KernelLogLevel};
 
-lazy_static! {
-	pub static ref KERNEL_LINE_REGEX: regex::Regex =
+static KERNEL_LINE_REGEX: LazyLock<regex::Regex> =
+	LazyLock::new(|| {
 		match regex::RegexBuilder::new(KERNEL_LINE_REGEX_PATTERN)
 			.ignore_whitespace(true)
 			.build()
 		{
-			Err(e) =>
-				panic!("Static variable KERNEL_LINE_REGEX unable to initialize!\nError:\n\t{e}"),
+			Err(e) => {
+				panic!("Static variable KERNEL_LINE_REGEX unable to initialize!\nError:\n\t{e}")
+			},
 			Ok(regex) => regex,
-		};
-}
+		}
+	});
+
 static KERNEL_LINE_REGEX_PATTERN: &str = r#"
     ^                       # Start of string _and_ line!
     (<(?P<level>\d)>)?      # Potential first match: The log level
@@ -35,21 +38,22 @@ static KERNEL_LINE_REGEX_PATTERN: &str = r#"
 fn get_regex_match_by_name<'a>(
 	captures: &'a regex::Captures,
 	input_string: &'a str,
-	pattern: &str,
 	group_name: &str,
 ) -> Result<&'a str> {
-	match captures.name(group_name) {
-		Some(regex_match) => Ok(regex_match.as_str()),
-		None => Err(anyhow!(KernelLineError::MissingRegexGroupMatch {
-			group_name: group_name.to_string(),
-			pattern: pattern.to_string(),
-			input: input_string.to_string(),
-		})),
-	}
+	captures.name(group_name).map_or_else(
+		|| {
+			Err(anyhow!(KernelLineError::MissingRegexGroupMatch {
+				group_name: group_name.to_string(),
+				pattern: KERNEL_LINE_REGEX_PATTERN.to_string(),
+				input: input_string.to_string(),
+			}))
+		},
+		|regex_match| Ok(regex_match.as_str()),
+	)
 }
 
-/// Parse `input_string` into a humantime::Timestamp, by leveraging humatime::parse_rfc3339_weak()
-/// -> https://docs.rs/humantime/2.0.1/humantime/fn.parse_rfc3339_weak.html
+/// Parse `input_string` into a `humantime::Timestamp`, by `leveraging humatime::parse_rfc3339_weak()`
+/// -> [https://docs.rs/humantime/2.0.1/humantime/fn.parse_rfc3339_weak.html](https://docs.rs/humantime/2.0.1/humantime/fn.parse_rfc3339_weak.html)
 pub fn parse_dmesg_iso_timestamp(input_string: &str) -> Result<Timestamp> {
 	let timestamp: std::time::SystemTime = match humantime::parse_rfc3339_weak(input_string) {
 		Ok(result) => result,
@@ -67,29 +71,21 @@ pub fn parse_dmesg_iso_timestamp(input_string: &str) -> Result<Timestamp> {
 /// Expected string structure:
 ///     <log-level>?<yyyy-mm-ddTHH:MM:SS,<ms><timezone offset> <message>
 pub fn get_log_line_regex_matches(input_line: &str) -> Result<(KernelLogLevel, Timestamp, String)> {
-	let captures = match KERNEL_LINE_REGEX.captures(input_line) {
-		Some(matches) => matches,
-		None => {
-			return Err(anyhow!(KernelLineError::NoRegexMatches {
-				pattern: KERNEL_LINE_REGEX_PATTERN.to_string(),
-				input: input_line.to_string(),
-			}));
-		},
+	let Some(captures) = KERNEL_LINE_REGEX.captures(input_line) else {
+		return Err(anyhow!(KernelLineError::NoRegexMatches {
+			pattern: KERNEL_LINE_REGEX_PATTERN.to_string(),
+			input: input_line.to_string(),
+		}));
 	};
 
 	// Extract named groups into variables
 	let (timestamp, message, log_level) = (
-		match get_regex_match_by_name(
-			&captures,
-			input_line,
-			KERNEL_LINE_REGEX_PATTERN,
-			"timestamp",
-		) {
+		match get_regex_match_by_name(&captures, input_line, "timestamp") {
 			Err(e) => return Err(e),
 			Ok(string) => parse_dmesg_iso_timestamp(string)?,
 		},
-		get_regex_match_by_name(&captures, input_line, KERNEL_LINE_REGEX_PATTERN, "message")?,
-		match get_regex_match_by_name(&captures, input_line, KERNEL_LINE_REGEX_PATTERN, "level") {
+		get_regex_match_by_name(&captures, input_line, "message")?,
+		match get_regex_match_by_name(&captures, input_line, "level") {
 			Ok(lvl) => match lvl {
 				"0" => KernelLogLevel::Emergency,
 				"1" => KernelLogLevel::Alert,

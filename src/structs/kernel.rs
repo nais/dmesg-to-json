@@ -24,14 +24,14 @@ impl std::fmt::Display for KernelLogLevel {
 		f: &mut std::fmt::Formatter,
 	) -> std::fmt::Result {
 		match *self {
-			KernelLogLevel::Emergency => write!(f, "DebugEmergency"),
-			KernelLogLevel::Alert => write!(f, "Alert"),
-			KernelLogLevel::Critical => write!(f, "Critical"),
-			KernelLogLevel::Error => write!(f, "Error"),
-			KernelLogLevel::Warning => write!(f, "Warning"),
-			KernelLogLevel::Notice => write!(f, "Notice"),
-			KernelLogLevel::Info => write!(f, "Info"),
-			KernelLogLevel::Debug => write!(f, "Debug"),
+			Self::Emergency => write!(f, "DebugEmergency"),
+			Self::Alert => write!(f, "Alert"),
+			Self::Critical => write!(f, "Critical"),
+			Self::Error => write!(f, "Error"),
+			Self::Warning => write!(f, "Warning"),
+			Self::Notice => write!(f, "Notice"),
+			Self::Info => write!(f, "Info"),
+			Self::Debug => write!(f, "Debug"),
 		}
 	}
 }
@@ -60,14 +60,14 @@ pub struct KernelLine {
 }
 
 impl KernelLine {
-	/// Regex parse log_level, timestamp, and message from log line
-	pub fn new(line: &str) -> Result<KernelLine> {
+	/// Regex parses fields from log line
+	pub fn new(line: &str) -> Result<Self> {
 		let (log_level, timestamp, message) = utils::get_log_line_regex_matches(line)?;
 
-		let result = KernelLine {
-			timestamp,
-			message: message.to_owned(),
+		let result = Self {
 			log_level,
+			timestamp,
+			message,
 		};
 		Ok(result)
 	}

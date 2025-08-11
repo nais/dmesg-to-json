@@ -22,23 +22,20 @@ impl IptablesLogLine {
 	pub fn new(
 		input_string: &str,
 		timestamp: &SystemTime,
-	) -> Result<IptablesLogLine> {
-		let (iptables_prefix, body) = match input_string.split_once(": ") {
-			Some(tuple) => tuple,
-			None => {
-				return Err(anyhow!(
-					"Unable to find split dmesg-line by ': ':\n\n{:?}",
-					input_string
-				));
-			},
+	) -> Result<Self> {
+		let Some((iptables_prefix, body)) = input_string.split_once(": ") else {
+			return Err(anyhow!(
+				"Unable to find split dmesg-line by ': ':\n\n{:?}",
+				input_string
+			));
 		};
 		let parse_map: HashMap<String, String> = body
-			.split(" ")
-			.flat_map(|pair| pair.split("="))
-			.map(|s| s.to_string())
+			.split(' ')
+			.flat_map(|pair| pair.split('='))
+			.map(ToString::to_string)
 			.tuples()
 			.collect();
-		let result: IptablesLogLine = self::IptablesLogLine {
+		let result: Self = Self {
 			timestamp: Serde::from(timestamp.to_owned()),
 			log_type: iptables_prefix.to_owned(),
 			source_ip: parse_map["SRC"].parse()?,
